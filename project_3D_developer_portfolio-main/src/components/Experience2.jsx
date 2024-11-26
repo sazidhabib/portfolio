@@ -1,17 +1,5 @@
 import React from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
-
-import "react-vertical-timeline-component/style.min.css";
-
-import { styles } from "../styles";
-//import { experiences } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
-import { experiences } from "../constants/Constants";
+import { VerticalTimelineElement } from "react-vertical-timeline-component";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -44,15 +32,15 @@ const ExperienceCard = ({ experience }) => {
           className="h-12 w-12 rounded-md object-cover mt-1 md:h-10"
         />
         <div className="flex flex-col">
-          <div className="text-lg font-semibold text-white md:text-sm">
+          <h3 className="text-lg font-semibold text-white md:text-sm">
             {experience?.role}
-          </div>
-          <div className="text-sm font-medium text-gray-400 md:text-xs">
+          </h3>
+          <p className="text-sm font-medium text-gray-400 md:text-xs">
             {experience?.company}
-          </div>
-          <div className="text-xs font-normal text-gray-500 md:text-[10px]">
+          </p>
+          <p className="text-xs font-normal text-gray-500 md:text-[10px]">
             {experience?.date}
-          </div>
+          </p>
         </div>
       </div>
 
@@ -61,15 +49,15 @@ const ExperienceCard = ({ experience }) => {
         {experience?.desc && <p>{experience.desc}</p>}
 
         {experience?.skills && (
-          <div className="mt-2 flex  gap-2">
-            <b className="font-bold text-white text-xs mb-1">Skills:</b>
+          <div className="mt-2">
+            <p className="font-bold text-white mb-1">Skills:</p>
             <div className="flex flex-wrap gap-2">
               {experience.skills.map((skill, index) => (
                 <span
                   key={index}
                   className="bg-gray-800 text-white text-xs px-2 py-1 rounded-md"
                 >
-                  &nbsp;{skill}
+                  &nbsp;.{skill}
                 </span>
               ))}
             </div>
@@ -80,30 +68,4 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
-const Experience = () => {
-  return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
-          What I have done so far
-        </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
-        </h2>
-      </motion.div>
-
-      <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
-      </div>
-    </>
-  );
-};
-
-export default SectionWrapper(Experience, "work");
+export default ExperienceCard;

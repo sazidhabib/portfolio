@@ -30,7 +30,8 @@ const Hero = () => {
           {...headContentAnimation}
           className="xl:h-full md:h-[550px] h-[350px] flex items-center justify-center overflow-hidden relative"
         >
-          <div className="home__img bg-center bg-cover aspect-w-1 aspect-h-1"></div>
+          <img src="planet/chareacter.png" alt="" />
+          {/* <div className="home__img bg-center bg-cover aspect-w-1 aspect-h-1"></div> */}
         </motion.div>
       </div>
 
