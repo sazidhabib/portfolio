@@ -12,6 +12,7 @@ import {
   StarsCanvas,
 } from "./components";
 import HeroNew from "./components/HeroNew";
+import Skills from "./components/Skills";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         </div>
 
         <About />
+        <Skills />
         <Experience />
 
         <Tech />

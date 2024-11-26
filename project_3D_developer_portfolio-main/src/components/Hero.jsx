@@ -7,13 +7,13 @@ const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto flex items-center justify-center">
       {/* Content Container */}
-      <div className="flex flex-row items-center gap-10 max-w-7xl mx-auto">
+      <div className="flex flex-col px-6 items-center md:flex-row gap-10 max-w-7xl mx-auto">
         {/* Bio Section */}
         <div>
-          <div className="flex flex-col justify-center items-center">
+          {/* <div className="flex flex-col justify-center items-center">
             <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
             <div className="w-1 sm:h-80 h-40 violet-gradient" />
-          </div>
+          </div> */}
           <div>
             <h1 className={`${styles.heroHeadText} text-white`}>
               Hi, I'm <span className="text-[#915EFF]">Adrian</span>
@@ -28,9 +28,9 @@ const Hero = () => {
         {/* Image Section */}
         <motion.div
           {...headContentAnimation}
-          className="xl:h-auto md:h-[550px] h-[350px] flex items-center"
+          className="xl:h-full md:h-[550px] h-[350px] flex items-center justify-center overflow-hidden relative"
         >
-          <img src="/planet/chareacter.png" alt="Character" />
+          <div className="home__img bg-center bg-cover aspect-w-1 aspect-h-1"></div>
         </motion.div>
       </div>
 
